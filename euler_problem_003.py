@@ -7,32 +7,30 @@
 #
 # What is the largest prime factor of the number 600851475143 ?
 
+import math 
 
 num = 600851475143
 # num = 13195
 
-# checks if a number is prime
-def isPrime(x):
-	result = True
 
-	for i in range(2,x):
-		if x%i==0:
-			result = False
+# checks for highest prime factor
+def highestPrimeFactor(x):
+	i = 2
 
-	return result
+	# only increment through numbers that are less than half of
+	# the original number 
+	while i*i < x:
+		print "i is: %d" % i
 
-# finds prime factors
-def largestPrime(x):
-	factor = 1
-	prime = 1
+		# checks if the number incremented is divisible by number
+		while x%i == 0:
+			x = x/i 
 
-	for i in range(1,x):
-		if x%i==0: 
-			factor = i
-			if isPrime(factor):
-				prime = factor
-				print i
-	return prime
+		print "x is now: %d" % x
 
-# do not run - it will take forever
-largestPrime(num)
+		i += 1
+
+	return x
+
+
+print highestPrimeFactor(num)
