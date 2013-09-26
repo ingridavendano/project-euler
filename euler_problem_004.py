@@ -8,7 +8,7 @@
 
 # Find the largest palindrome made from the product of two 3-digit numbers.
 
-def isPalindrone(x):
+def is_palindrone(x):
 	x = str(x)
 	length = len(x)
 	result = True
@@ -23,26 +23,23 @@ def isPalindrone(x):
 	return result
 
 # start with the highest three digit numbers
-a = 999
-b = 999
 product = 0
 highest_palindrone_product = 0
 
-num1 = a
-num2 = b
-
+num1 = 0
+num2 = 0
 count = 0
 
-# iterate through 999-0
-for i in range(a,99,-1): 
+# iterate through 999 to 0
+for i in range(999,99,-1): 
 
-	# iterate through 999-0
-	for j in range(b,99,-1):
+	# iterate through whatever i is to 0
+	for j in range(i,99,-1):
 		product = i*j
 		count += 1
 
 		# checks if product is the highest valued palidrone
-		if isPalindrone(product):
+		if is_palindrone(product):
 			if product > highest_palindrone_product:
 				highest_palindrone_product = product
 				num1 = i
