@@ -9,28 +9,24 @@
 
 import math 
 
-num = 600851475143
-# num = 13195
-
-
 # checks for highest prime factor
-def highestPrimeFactor(x):
+def highest_prime_factor(num):
 	i = 2
 
 	# only increment through numbers that are less than half of
 	# the original number 
-	while i*i < x:
-		print "i is: %d" % i
+	while i*i < num:
+		# print "i is: %d" % i
 
 		# checks if the number incremented is divisible by number
-		while x%i == 0:
-			x = x/i 
-
-		print "x is now: %d" % x
-
+		while num%i == 0:
+			num = num/i 
 		i += 1
+		
+	return num
 
-	return x
+def main(): 
+	solution = highest_prime_factor(600851475143)
+	print "Solution to problem 2:", solution
 
-
-print highestPrimeFactor(num)
+main()
