@@ -8,7 +8,6 @@
 #
 # What is the 10 001st prime number?
 
-
 # checks for highest prime factor
 def is_prime_factor(num):
 	number_is_prime = True
@@ -43,6 +42,11 @@ def nth_prime(num):
 
 		i += 1
 
-	print "Prime number at %d is %d." % (number_of_primes, prime_at_nth)
+	return prime_at_nth
 
-nth_prime(10001)
+
+def main():
+	solution = nth_prime(10001)
+	print "Solution to problem 6:", solution
+
+main()
