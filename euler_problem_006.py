@@ -1,7 +1,7 @@
 # Created by Ingrid Avendano on 9/26/13. 
 #
 #
-# Project Euler - Problem 6:
+# Project Euler - Problem 6: Sum square difference
 #
 # The sum of the squares of the first ten natural numbers is:
 #
