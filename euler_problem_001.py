@@ -17,4 +17,5 @@ def main():
 
 	print "Solution to problem 1:", total
 
+
 main()
