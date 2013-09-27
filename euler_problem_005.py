@@ -1,13 +1,14 @@
 # Created by Ingrid Avendano on 9/25/13. 
 #
 #
-# Project Euler - Problem 5:
+# Project Euler - Problem 5: Smallest multiple
 #
 # 2520 is the smallest number that can be divided by each of the numbers 
 # from 1 to 10 without any remainder.
 #
 # What is the smallest positive number that is evenly divisible by all of 
 # the numbers from 1 to 20?
+
 
 # goes through to find all the factors for a particular number
 def factors_of_each_number(num):
