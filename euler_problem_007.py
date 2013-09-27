@@ -8,39 +8,41 @@
 #
 # What is the 10 001st prime number?
 
-# checks for highest prime factor
-def has_prime_factor(num):
-	i = 2
-	has_prime = False
 
-	# only increment through numbers that are less than half of
-	# the original number 
-	while i*i < num:
-		# checks if the number incremented is divisible by original number
+# checks for highest prime factor
+def is_prime_factor(num):
+	number_is_prime = True
+	i = 2
+
+	# only increment through numbers that are less or equal to 
+	# half of the original number 
+	while i*i <= num:
 		if num%i == 0:
-			has_prime = True
+			number_is_prime = False
 			break
 		i += 1
 
-	return has_prime
+	return number_is_prime
+
 
 # finds the nth prime number
 def nth_prime(num):
-	run = True
-	count = 0
 	prime_at_nth = 0
+	number_of_primes = 0
 	i = 2
-	while num > 0:
+	
+	while number_of_primes < num:
 
-		if has_prime_factor(i):
-			num -= 1
-			count += 1
+		# only increments the number_of_primes if it is a 
+		# prime number 
+		if is_prime_factor(i):
+			number_of_primes += 1
 
-		if num==0:
-			prime_at_nth = i - 2
+		if num==number_of_primes:
+			prime_at_nth = i 
 
 		i += 1
 
-	print "Prime number at %d is %d" % (count, prime_at_nth)
+	print "Prime number at %d is %d." % (number_of_primes, prime_at_nth)
 
 nth_prime(10001)
