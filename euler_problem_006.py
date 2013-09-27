@@ -17,20 +17,21 @@
 # Find the difference between the sum of the squares of the first one hundred 
 # natural numbers and the square of the sum.
 
+def main():
+	sum_of_squares = 0
+	total_sum = 0
 
-sum_of_squares = 0
-total_sum = 0
+	# iterates through 100 numbers
+	for i in range(1,101):
+		sum_of_squares += i**2
+		total_sum += i
 
-# iterates through 100 numbers
-for i in range(1,101):
-	sum_of_squares += i**2
-	total_sum += i
+	square_of_sum = total_sum**2
 
-square_of_sum = total_sum**2
+	# finds difference between two sums
+	diff_of_sums = square_of_sum - sum_of_squares
 
-print "Sum of squares: %d" % sum_of_squares
-print "Square of sum: %d" % square_of_sum
+	print "Solution to problem 6:", diff_of_sums
 
-# finds difference between two sums
-diff_of_sums = square_of_sum - sum_of_squares
-print "Difference of sums: %d" % diff_of_sums
+
+main()
