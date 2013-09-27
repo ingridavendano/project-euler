@@ -9,12 +9,11 @@
 # What is the smallest positive number that is evenly divisible by all of 
 # the numbers from 1 to 20?
 
-
 # goes through to find all the factors for a particular number
 def factors_of_each_number(num):
+	original_num = num
 	factors = []
 	i = 2
-	original_num = num
 
 	while i*i <= num:
 		# checks if the number incremented is divisible by number
@@ -40,18 +39,16 @@ def list_prime_number_factors(num):
 
 		# checks to see if number is not already in the list
 		# if it is not in the list then it is added to the list
-		for number in factors:
-			if number not in list_of_factors:
-				list_of_factors.append(number)
+		for i in factors:
+			if i not in list_of_factors:
+				list_of_factors.append(i)
 
-	print list_of_factors
 	return list_of_factors
 
 
 # finds the highest power of a primary factor
 def list_factors_of(num):
 	factors = list_prime_number_factors(num)
-	# product = 1
 
 	for i in range(len(factors[1:])):
 		base = factors[i+1]
@@ -61,23 +58,24 @@ def list_factors_of(num):
 			factors[i+1] = base**power
 			power += 1
 	
-	print factors
 	return factors
 
 
 # finds the product of all the factors
-def find_product(factors):
+def find_smallest_product(factors):
 	product = 1
 	for i in factors:
 		product *= i
 
-	print product
 	return product
+
 
 # set the number range in list_factors
 def main():
 	factors = list_factors_of(20)
-	final_product = find_product(factors)
-	print final_product
+	solution = find_smallest_product(factors)
+
+	print "Solution to problem 5:", solution
+
 
 main()
