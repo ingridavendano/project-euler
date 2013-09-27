@@ -28,8 +28,10 @@ def fib(num):
 	
 	return total 
 
+
 def main():
 	total = fib(4000000)
 	print "Solution to problem 2:", total
+
 
 main()
