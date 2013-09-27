@@ -9,6 +9,7 @@
 
 import math 
 
+
 # checks for highest prime factor
 def highest_prime_factor(num):
 	i = 2
@@ -22,11 +23,13 @@ def highest_prime_factor(num):
 		while num%i == 0:
 			num = num/i 
 		i += 1
-		
+
 	return num
+
 
 def main(): 
 	solution = highest_prime_factor(600851475143)
-	print "Solution to problem 2:", solution
+	print "Solution to problem 3:", solution
+
 
 main()
