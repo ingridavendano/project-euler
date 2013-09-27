@@ -13,20 +13,25 @@
 # do not exceed four million, find the sum of the even-valued terms.
 
 
-current = 2
-previous = 1
-total = 0
+def fib(num):
+	total = 0
+	first_fib_num = 1
+	second_fib_num = 2
 
-while current <= 4000000:
-    # print current
+	while second_fib_num <= num:
 
-    # only stores even valued numbers to total
-    if current % 2 == 0:
-        total += current
+	    # only stores even valued numbers to total
+	    if second_fib_num % 2 == 0:
+	        total += second_fib_num
 
-    current += previous
-    previous = current - previous 
+	    second_fib_num += first_fib_num
+	    first_fib_num = second_fib_num - first_fib_num
+	
+	return total 
 
-    # print "Sum so far: %d" % total
 
-print total
+def main():
+	total = fib(4000000)
+	print "Solution to problem 2:", total
+
+main()
