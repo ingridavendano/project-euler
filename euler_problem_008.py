@@ -27,8 +27,13 @@
 # 05886116467109405077541002256983155200055935729725
 # 71636269561882670428252483600823257530420752963450
 
-def highest_five_digit_numbers(num):
-	pass
+def highest_five_digit_numbers(num_list):
+	highest_numbers = []
+
+	for i in range(len(num_list)):
+		if num_list[i] == 9:
+			
+
 
 # converts a number to a list of digits
 def create_list_of_digits(num):
