@@ -12,7 +12,6 @@
 # By considering the terms in the Fibonacci sequence whose values 
 # do not exceed four million, find the sum of the even-valued terms.
 
-
 def fib(num):
 	total = 0
 	first_fib_num = 1
@@ -28,7 +27,6 @@ def fib(num):
 	    first_fib_num = second_fib_num - first_fib_num
 	
 	return total 
-
 
 def main():
 	total = fib(4000000)
