@@ -24,9 +24,35 @@
 # hundred divisors?
 
 
-def main():
+# increments through numbers to find divisors 
+def num_of_divisors(n):
+	divisors = 0
+	i = 1
 
-	print "Solution to problem 12:"
+	while i*i <= n:
+		if n%i == 0:
+			divisors += 2
+		i += 1
+
+	return divisors
+
+
+# equation for trigular number (n*(n+1))/2
+def find_triangular(n):
+	return (n*(n+1))/2
+
+
+def main():
+	i = 1
+
+	while True:
+		triangular_num = find_triangular(i)
+
+		if num_of_divisors(triangular_num) >= 500:
+			break
+		i += 1	
+
+	print "Solution to problem 12:", triangular_num
 
 
 main()
