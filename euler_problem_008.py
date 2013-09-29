@@ -27,8 +27,21 @@
 # 05886116467109405077541002256983155200055935729725
 # 71636269561882670428252483600823257530420752963450
 
+
+def list_of_products(num_list):
+	product_list = []
+	for num in num_list:
+		product = 1
+		for digit in num: 
+			product *= int(digit)
+		product_list.append(product)
+	return product_list
+
+
 def highest_five_digit_numbers(num_list):
+	high_numbers = []
 	highest_numbers = []
+	products = []
 
 	# go through the list minus the last four digits
 	for i in range(len(num_list) - 4):
@@ -36,17 +49,16 @@ def highest_five_digit_numbers(num_list):
 			five_digits = ""
 			for j in range(5):
 				five_digits += num_list[i + j]
-			highest_numbers.append(five_digits)
+			high_numbers.append(five_digits)
 
+	# creates a list of products and sorts them
+	products = list_of_products(high_numbers)
+	products = sorted(products)
 
-	# looks for the highest digits starting with '9' and second digit is '9'
-	for i in range(len(highest_numbers)):
-		five_digit_num = highest_numbers[i]
-		if five_digit_num[2] == '9':
-			if five_digit_num[3] == '8':
-				print "HELL YES"
-			elif five_digit_num[3] == '6':
-				print "FUCK YES"
+	# the last number of the list is the highest product
+	hightest_num = products[-1]
+
+	return hightest_num
 
 
 # converts a number to a list of digits
@@ -59,12 +71,13 @@ def create_list_of_digits(num):
 
 	return list_of_digits
 
+
 def main():
 	huge_number = 7316717653133062491922511967442657474235534919493496983520312774506326239578318016984801869478851843858615607891129494954595017379583319528532088055111254069874715852386305071569329096329522744304355766896648950445244523161731856403098711121722383113622298934233803081353362766142828064444866452387493035890729629049156044077239071381051585930796086670172427121883998797908792274921901699720888093776657273330010533678812202354218097512545405947522435258490771167055601360483958644670632441572215539753697817977846174064955149290862569321978468622482839722413756570560574902614079729686524145351004748216637048440319989000889524345065854122758866688116427171479924442928230863465674813919123162824586178664583591245665294765456828489128831426076900422421902267105562632111110937054421750694165896040807198403850962455444362981230987879927244284909188845801561660979191338754992005240636899125607176060588611646710940507754100225698315520005593572972571636269561882670428252483600823257530420752963450
 	list_of_digits = create_list_of_digits(huge_number)
-	# print list_of_digits 
 	solution = highest_five_digit_numbers(list_of_digits)
-	print "Solution to problem 7:", solution
+
+	print "Solution to problem 8:", solution
 
 
 main()
