@@ -48,6 +48,6 @@ def nth_prime(num):
 
 def main():
 	solution = nth_prime(10001)
-	print "Solution to problem 6:", solution
+	print "Solution to problem 7:", solution
 
 main()
