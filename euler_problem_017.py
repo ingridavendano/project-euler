@@ -15,6 +15,7 @@
 # 20 letters. The use of "and" when writing out numbers is in compliance with 
 # British usage.
 
+
 def word_for_one_to_nine(x):
 	if x == 0:
 		return ""
@@ -37,6 +38,7 @@ def word_for_one_to_nine(x):
 	elif x == 9:
 		return "nine"
 
+
 def word_for_twenty_plus(x):
 	if x == 0:
 		return ""
@@ -47,9 +49,9 @@ def word_for_twenty_plus(x):
 	elif x == 3:
 		return "thirty"
 	elif x == 4:
-		return "fourteen"
+		return "forty"
 	elif x == 5:
-		return "fifteen"
+		return "fifty"
 	elif x == 6:
 		return "sixty"
 	elif x == 7:
@@ -58,6 +60,7 @@ def word_for_twenty_plus(x):
 		return "eighty"
 	elif x == 9:
 		return "ninety"
+
 
 def word_for_ten_to_nineteen(x):
 	if x == 0:
@@ -77,30 +80,40 @@ def word_for_ten_to_nineteen(x):
 	elif x == 7:
 		return "seventeen"
 	elif x == 8:
-		return "eightteen"
+		return "eighteen"
 	elif x == 9:
 		return "nineteen"
 
 
 def main():
-	
+	letter_count = len("onethousand")
+
 	for hundred in range(0,10):
-		number = ""
-		if hundred > 0:
-			number += word_for_one_to_nine(hundred) + "hundred"
+		word_of_number = ""
 
 		for ten in range(0,10):
-			if hundred > 0: 
-				number += "and"
 
 			for one in range(0,10):
+				number = hundred*100 + ten*10 + one
+
+				if hundred > 0:
+					word_of_number += word_for_one_to_nine(hundred) + "hundred"
+
+				if hundred > 0 and (one > 0 or ten > 0): 
+					word_of_number += "and"
+
+				if ten > 1:
+					word_of_number += word_for_twenty_plus(ten)
+
 				if ten == 1: 
-					number += word_for_ten_to_nineteen(one)
+					word_of_number += word_for_ten_to_nineteen(one)
 				else: 
-					number += word_for_one_to_nine(one)
+					word_of_number += word_for_one_to_nine(one)
 
+				letter_count += len(word_of_number)
+				word_of_number = ""
 
+	print "Solution to problem 17:",letter_count
 
-	print "Solution to problem 17:"
 
 main()
