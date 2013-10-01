@@ -37,12 +37,39 @@
 # and requires a clever method! ;o)
 
 
+def reverse_range(list_of_items):
+	return range(len(list_of_items))[::-1]
+
+
 def main():
 
-	triangle = [[3], [7, 4], [2, 4, 6], [8, 5, 9, 3]]
+	# read txt file with triangle of numbers
+	text_file = open("extras/euler_problem_018_triangle.txt")
+	triangle = text_file.read()
+	text_file.close
+
+	# separates new lines into items in a list 
+	triangle = triangle.split("\n")
+
+	# all the numbers are separated by spaces
+	for level in triangle:
+		level = level.split()
+		for i in range(len(level)):
+			level[i] = int(level[i])
+
+		print level
 
 
-	print "Solution to problem 18:"
+	path_length_sum = 0
+
+	for level in reverse_range(triangle):
+		for number in range(len(level)):
+
+
+
+
+
+	# print "Solution to problem 18:"
 
 
 main()
