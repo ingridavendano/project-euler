@@ -11,13 +11,34 @@
 #
 # For example, when the list is sorted into alphabetical order, COLIN, which 
 # is worth 3 + 15 + 12 + 9 + 14 = 53, is the 938th name in the list. So, 
-# COLIN would obtain a score of 938 × 53 = 49714.
+# COLIN would obtain a score of 938 x 53 = 49714.
 #
 # What is the total of all the name scores in the file?
 
 
 def main():
-	pass
-	# print "Solution to problem 22:"
+	# read txt file with triangle of numbers
+	text_file = open("../data/names.txt")
+	triangle = text_file.read()
+	text_file.close
+
+	# separates items in a list 
+	names = sorted(triangle[1:-1].split("\",\""))
+
+	rank = 1
+	total_scores = 0
+
+	for name in names:
+		score = 0
+		for letter in name:
+			score += (ord(letter) - 64)
+
+		score *= rank
+		total_scores += score
+		
+		rank += 1
+	
+	print "Solution to problem 22:",total_scores
+
 
 main()
