@@ -12,6 +12,10 @@
 # How many such routes are there through a 20x20 grid?
 
 
+def num_of_paths(grid_size):
+	pass
+
+
 def main():
 
 

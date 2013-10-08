@@ -35,13 +35,26 @@ def days_in_month(month, year):
 	return 0
 
 
+def sunday_counter(days):
+	if days % 7 == 0:
+		return 1
+	return 0
+
+
 def main():
 
 	years = 99
 	starting_date = 1
 	ending_date = 31
 
-	# print "Solution to problem 19:"
+	total_number_of_days = 1
+	total_sundays = 0
+	for year in range(1901,2000):
+		for month in range(1,13):
+			total_number_of_days += days_in_month(month, year)
+			total_sundays += sunday_counter(total_number_of_days)
+
+	print "Solution to problem 19:", total_sundays
 
 
 main()
