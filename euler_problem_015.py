@@ -13,12 +13,13 @@
 
 
 def num_of_paths(grid_size):
-	pass
+	for i in range(len(grid_size)):
 
 
 def main():
 
 
 	print "Solution to problem 15:"
+
 
 main()
