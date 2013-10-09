@@ -24,6 +24,12 @@
 
 
 def main():
+
+	numerator = 1. 
+
+	for denominator in range(2,1001):
+		print "1/%d:"%(denominator), (numerator/denominator)
+
 	# print "Solution to problem 26:"
 
 

@@ -13,11 +13,17 @@
 
 
 def num_of_paths(grid_size):
-	for i in range(len(grid_size)):
+	pass
 
 
 def main():
+	# read txt file with triangle of numbers
+	text_file = open("/data/triangle.txt")
+	triangle = text_file.read()
+	text_file.close
 
+	# separates items in a list 
+	names = sorted(triangle.split())
 
 	print "Solution to problem 15:"
 
