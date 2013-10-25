@@ -12,20 +12,24 @@
 # How many such routes are there through a 20x20 grid?
 
 
-def num_of_paths(grid_size):
-	pass
+import time
+
+
+def lattice(d, r):
+  if r <= 0 and d <= 0:
+     return 1
+  possibles = 0
+  if r > 0:
+      possibles += lattice(d, r-1)
+  if d > 0:
+      possibles += lattice(d-1, r)
+  return possibles
 
 
 def main():
-	# read txt file with triangle of numbers
-	text_file = open("/data/triangle.txt")
-	triangle = text_file.read()
-	text_file.close
 
-	# separates items in a list 
-	names = sorted(triangle.split())
-
-	print "Solution to problem 15:"
+	solution = lattice(20,20)
+	print "Solution to problem 15:", solution
 
 
 main()
