@@ -41,7 +41,6 @@ def lattice(columns, rows):
 
 
 def main():
-
 	solution = lattice(20,20)
 	print "Solution to problem 15:", solution
 
