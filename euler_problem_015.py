@@ -14,7 +14,7 @@
 
 import time
 
-
+# TODO: make it not so long
 def lattice(d, r):
   if r <= 0 and d <= 0:
      return 1
