@@ -1,6 +1,8 @@
 # Created by Ingrid Avendano on 10/28/13. 
 #
 #
+# Project Euler - Problem 42: Coded triangle numbers
+#
 # The nth term of the sequence of triangle numbers is given by, 
 # t_n = (1/2)*n*(n+1); so the first ten triangle numbers are:
 #
@@ -17,7 +19,7 @@
 
 
 def read_in_words():
-	text_file = open("data/words.txt")
+	text_file = open("../data/words.txt")
 	str_of_words = text_file.read()
 	text_file.close()
 
