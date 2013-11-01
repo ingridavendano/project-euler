@@ -3,7 +3,6 @@
 #
 # Project Euler - Problem 28: Number spiral diagonals
 #
-#
 # Starting with the number 1 and moving to the right in a clockwise 
 # direction a 5 by 5 spiral is formed as follows:
 #
@@ -21,7 +20,7 @@
 
 def main():
 
-	# print "Solution to problem 27:", solution
+	# print "Solution to problem 28:", solution
 	
 
 main()
