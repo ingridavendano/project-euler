@@ -1,0 +1,24 @@
+# Created by Ingrid Avendano on 2/8/14. 
+#
+#
+# Project Euler - Problem 50: Consecutive prime sum
+#
+# The prime 41, can be written as the sum of six consecutive primes:
+# 41 = 2 + 3 + 5 + 7 + 11 + 13
+#
+# This is the longest sum of consecutive primes that adds to a prime 
+# below one-hundred.
+#
+# The longest sum of consecutive primes below one-thousand that adds to a
+# prime, contains 21 terms, and is equal to 953.
+#
+# Which prime, below one-million, can be written as the sum of the most 
+# consecutive primes?
+
+
+def main():
+	pass
+	# print "Solution to problem 50:", solution
+	
+
+main()
