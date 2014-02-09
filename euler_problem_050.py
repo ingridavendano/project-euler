@@ -16,8 +16,57 @@
 # consecutive primes?
 
 
+# checks for prime number
+def is_a_prime(num):
+    number_is_prime = True
+    i = 2
+
+    # only increment through numbers that are less or equal to 
+    # half of the original number 
+    while i*i <= num:
+        if num%i == 0:
+            number_is_prime = False
+            break
+        i += 1
+
+    return number_is_prime
+
+
 def main():
-	pass
+    primes = []
+    prime_sum = 0
+    highest_prime_sum = (0,0)
+
+    for i in range(2,100000):
+        if is_a_prime(i):
+            primes.append(i)
+            prime_sum += i
+            # print prime_sum
+            print prime_sum, len(primes)
+            if is_a_prime(prime_sum):
+                # print True, prime_sum, len(primes)
+                if prime_sum < 1000:
+                    # print True, prime_sum, len(primes)
+                    highest_prime_sum = (prime_sum, len(primes))
+                else: 
+                    break
+
+
+            #     # highest_prime_sum = (prime_sum, len(primes))
+
+            # if prime_sum < 1000:
+            #     if is_a_prime(prime_sum):
+            #         highest_prime_sum = (prime_sum, len(primes))
+            # else:
+            #     break
+
+    # print 
+    print highest_prime_sum
+
+    # print is_a_prime(953)
+
+
+
 	# print "Solution to problem 50:", solution
 	
 
