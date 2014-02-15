@@ -40,42 +40,6 @@
 
 
 def main():
-	nums = [str(i) for i in range(3)]
-	shift = len(nums) - 2
-	current = ""
-	count = 0
-
-	print nums[:shift] + nums[shift+1:] + [nums[shift]]
-	while count < 10:
-		print "".join(nums)
-		if shift == len(nums) - 1:
-			shift = 0
-
-
-		nums = nums[:shift] + nums[shift+1:] + [nums[shift]]
-		shift += 1
-		count += 1
-
-	# print "".join(nums)
-
-	# size = 3
-	# digits = []
-
-	# for i in range(size):
-	# 	digits.append(str(i))
-
-	# variations = []
-	# for digit in range(size):
-	# 	for variety in range(size-1):
-	# 		variations.append(str(digit))
-
-
-	# print digits
-	# list_of_variations = lexicographic(digits, variations, 1)
-
-	# for number in list_of_variations:
-	# 	print number
-
 	# print "Solution to problem 24:"
 
 
